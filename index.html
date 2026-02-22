@@ -1,159 +1,480 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tran Nhu Phuong - Principal Backend Engineer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Tran Nhu Phuong - Backend Principal Engineer</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --section-bg: #ffffff;
+        }
+
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             margin: 0;
-            background-color: #f4f6f9;
-            color: #1f2937;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #111827, #1f2937);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .profile-img {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            margin-bottom: 20px;
+            padding: 0;
         }
 
         .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--section-bg);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        h2 {
-            margin-top: 60px;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 10px;
+        /* Header Section */
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        .header-info {
+            flex: 1;
+            min-width: 300px;
         }
 
-        .tech span {
-            display: inline-block;
-            background: #e5e7eb;
-            padding: 8px 14px;
-            border-radius: 20px;
-            margin: 6px;
-            font-size: 14px;
+        .header-info h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .image-section img {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 15px;
+        .header-info h2 {
+            margin: 10px 0 20px;
+            font-weight: 400;
+            color: var(--accent-color);
         }
 
-        .certifications img {
-            height: 90px;
-            transition: transform 0.3s ease;
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9em;
         }
 
-        .certifications img:hover {
-            transform: scale(1.08);
+        .contact-info li {
+            margin-bottom: 5px;
         }
 
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 80px;
-        }
-
-        a {
-            color: #2563eb;
+        .contact-info a {
+            color: #fff;
             text-decoration: none;
+            border-bottom: 1px dotted #fff;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+            margin-left: 20px;
+            background-color: #ddd; /* Placeholder color */
+        }
+
+        /* Sections */
+        section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h3.section-title {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 1.4em;
+        }
+
+        /* Experience Items */
+        .job-item {
+            margin-bottom: 30px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .job-date {
+            font-style: italic;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .job-details ul {
+            padding-left: 20px;
+        }
+
+        .job-details li {
+            margin-bottom: 5px;
+        }
+
+        /* Sub Projects */
+        .sub-project {
+            background: #f4f6f7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .sub-project h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .tech-stack {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .skill-category ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        /* Education & Certs */
+        .education-item, .cert-item {
+            margin-bottom: 15px;
+        }
+        
+        .degree {
+            font-weight: bold;
+        }
+
+        .school {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .avatar {
+                margin: 20px auto 0;
+                display: block;
+            }
+            .job-header {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <img src="Picture4.jpg" class="profile-img">
-    <h1>Tran Nhu Phuong</h1>
-    <p>Principal Backend Engineer | 10+ Years Experience</p>
-    <p>
-        <a href="mailto:nhuphuong.khtn@gmail.com">Email</a> |
-        <a href="https://www.linkedin.com/in/phuong-nhu-9068bba8/" target="_blank">LinkedIn</a>
-    </p>
-</div>
-
 <div class="container">
+    <header>
+        <div class="header-info">
+            <h1>Tran Nhu Phuong</h1>
+            <h2>Backend Principal Engineer</h2>
+            <ul class="contact-info">
+                <li>📞 Phone: +84 36 7971 488</li>
+                <li>📧 Email: nhuphuong.khtn@gmail.com</li>
+                <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/phuong-nhu-9068bba8/" target="_blank">linkedin.com/in/phuong-nhu-9068bba8</a></li>
+                <li>🎂 DOB: 27/06/1993</li>
+            </ul>
+        </div>
+        <!-- THAY ĐỔI LINK ẢNH ĐẠI DIỆN Ở DƯỚI ĐÂY -->
+        <!-- Ví dụ: src="https://github.com/username/repo/raw/main/avatar.jpg" -->
+        <img src="Picture4.jpg" alt="Tran Nhu Phuong" class="avatar">
+    </header>
 
-    <h2>Professional Summary</h2>
-    <div class="card">
-        Principal Backend Engineer specializing in Java Spring Boot,
-        Microservices Architecture, AWS Cloud, and Enterprise Security standards.
-        Delivered banking and insurance platforms with scalability,
-        compliance, and high performance.
-    </div>
+    <section>
+        <h3 class="section-title">Profile</h3>
+        <p>A highly skilled backend software engineer with 10+ years of experience in developing scalable, high-performance applications. Strong expertise in Java, database systems, and cloud architectures (AWS, Docker, Kubernetes). Passionate about building robust, secure, and efficient systems, with a methodical approach to problem-solving and clean coding practices. Excellent communicator, adept at understanding business requirements and delivering end-to-end solutions in fast-paced, collaborative environments.</p>
+    </section>
 
-    <h2>Technical Stack</h2>
-    <div class="card tech">
-        <span>Java</span>
-        <span>Spring Boot</span>
-        <span>Microservices</span>
-        <span>REST API</span>
-        <span>Oracle</span>
-        <span>PostgreSQL</span>
-        <span>DynamoDB</span>
-        <span>AWS</span>
-        <span>Docker</span>
-        <span>Kubernetes</span>
-        <span>Kafka</span>
-        <span>RabbitMQ</span>
-    </div>
+    <section>
+        <h3 class="section-title">Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Programming & Backend</h4>
+                <ul>
+                    <li>10+ years Java (Java 8+, Spring Boot, Spring MVC, Maven, Microservices)</li>
+                    <li>REST API design, Security (FIDO, OAuth2, JWT)</li>
+                    <li>Asynchronous programming, API design</li>
+                    <li>Relational (PostgreSQL, MySQL) & NoSQL (MongoDB, Redis)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>DevOps & Cloud</h4>
+                <ul>
+                    <li>CI/CD: Jenkins, GitHub Actions, GitLab CI</li>
+                    <li>Containerization: Docker, Kubernetes (Production experience)</li>
+                    <li>AWS: API Gateway, ALB, ECS, S3, CloudFront, Lambda, SNS, SQS</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Databases & Storage</h4>
+                <ul>
+                    <li>Relational: Oracle, PostgreSQL, MySQL</li>
+                    <li>NoSQL: Couchbase, DynamoDB</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Others</h4>
+                <ul>
+                    <li>Big Data & Messaging: RabbitMQ (Event streaming)</li>
+                    <li>APIGEE Gateway development & deployment</li>
+                    <li>Networking & Security: Cisco CCNA certified</li>
+                    <li>Languages: Fluent in English (Verbal & Written)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <!-- Architecture Image -->
-    <h2>Architecture & System Design</h2>
-    <div class="card image-section">
-        <p>Enterprise Architecture Roadmap & System Design</p>
-        <img src="Picture1.png">
-    </div>
+    <section>
+        <h3 class="section-title">Work Experience</h3>
 
-    <!-- Presentation Image -->
-    <div class="card image-section">
-        <p>Architecture Presentation & Technical Leadership</p>
-        <img src="Picture2.png">
-    </div>
+        <!-- FPT Software -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Developer Level 3</div>
+                    <div class="company-name">FPT Software</div>
+                </div>
+                <div class="job-date">04/2025 – Present</div>
+            </div>
+            <div class="job-details">
+                <p><strong>Domain:</strong> Banking – ADIB (Abu Dhabi Islamic Bank) & MYZOI</p>
+                <ul>
+                    <li>Develop Java Spring Boot backend for ADIB & MYZOI digital banking system.</li>
+                    <li>Design and implement REST APIs for customer onboarding process, eKYC, account management, transactions.</li>
+                    <li>Integrate core banking systems, payment gateway and third-party AML/KYC.</li>
+                    <li>Optimize query performance, upgrade processing flow to async/reactive.</li>
+                    <li>Participate in financial and banking business analysis, work directly with BA and UAE onsite team.</li>
+                </ul>
+                <div class="sub-project">
+                    <h4>Remarkable Projects</h4>
+                    <p><strong>1. ADIB Digital Onboarding Platform</strong></p>
+                    <ul>
+                        <li>Build customer onboarding API: eKYC, biometric verification, document upload.</li>
+                        <li>Integrate identification services (OCR, face-match, blacklist check).</li>
+                        <li>Ensure compliance with PCI-DSS & ADIB security policies.</li>
+                    </ul>
+                    <p><strong>2. MYZOI SME Banking Platform</strong></p>
+                    <ul>
+                        <li>Develop loan management, transaction reconciliation, and corporate wallet modules.</li>
+                        <li>Design event-driven architecture (Kafka) for real-time transaction flows.</li>
+                        <li>Write unit tests & integration tests according to MYZOI CI/CD standards.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-    <!-- AWS Certification -->
-    <h2>Certifications</h2>
-    <div class="card certifications">
-        <a href="https://www.credly.com/badges/ed8a97c8-3adf-4eea-a295-fdca84c411a3" target="_blank">
-            <img src="Picture3.png">
-        </a>
-        <p>AWS Certified Solutions Architect – Associate & Professional</p>
-    </div>
+        <!-- Liberty Mutual Insurance -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Principal Engineer for Service Backend (Java-Spring boot)</div>
+                    <div class="company-name">Liberty Mutual Insurance – Viet Nam</div>
+                </div>
+                <div class="job-date">09/2021 – 04/2025</div>
+            </div>
+            <div class="job-details">
+                <p>Design + present Architecture Solution (using AWS services) for new applications.</p>
+                <ul>
+                    <li><strong>Architectural Design:</strong> Designed and documented architecture diagrams aligning with business requirements.</li>
+                    <li><strong>Team Collaboration:</strong> Led presentations to architect team, obtained approvals, and fostered innovation.</li>
+                    <li><strong>Project Management:</strong> End-to-end responsibility, risk mitigation, stakeholder communication.</li>
+                    <li><strong>Code Quality:</strong> Managed Git conventions, code reviews, and QA best practices.</li>
+                    <li><strong>CI/CD & DevOps:</strong> Streamlined merging/deployment to Jenkins; collaborated on AWS environments.</li>
+                    <li><strong>Leadership:</strong> Managed and motivated a team of developers, provided mentorship.</li>
+                    <li><strong>Security:</strong> Reviewed threats, implemented security measures for data integrity.</li>
+                </ul>
 
+                <div class="sub-project">
+                    <h4>Key Projects at Liberty</h4>
+                    
+                    <p><strong>a) AsiaMCM SecureLink Application (Technical Leader)</strong></p>
+                    <p class="tech-stack">Role: Principal Engineer | DB: AWS DynamoDB | Status: Ongoing</p>
+                    <ul>
+                        <li>Developed AMCM-SecureLink service (secure URL-based platform) to protect sensitive customer documents.</li>
+                        <li>Led technical design for secure document access via one-time links.</li>
+                        <li>Developed Python backend services using FastAPI with JWT-based authentication.</li>
+                        <li>Designed rate-limiting, access control, and custom audit logging.</li>
+                    </ul>
+
+                    <p><strong>b) Liberty – Zalo Mini Application (Technical Leader)</strong></p>
+                    <p class="tech-stack">Role: Principal Engineer | DB: AWS RDS PostgreSQL, Oracle DB | Status: Completed</p>
+                    <ul>
+                        <li>Developed Liberty-Zalo Mini App to manage sales employees (similar to Liberty Online).</li>
+                        <li>Architected microservices using Python (FastAPI).</li>
+                        <li>Built Zalo Mini App frontend using React Native (Login, push message).</li>
+                        <li>Implemented TDD workflow using pytest (80%+ test coverage).</li>
+                    </ul>
+
+                    <p><strong>c) Vietnam Digital Direct Portal (Liberty Web direct) (Technical Leader)</strong></p>
+                    <p class="tech-stack">Role: Principal Engineer | DB: AWS RDS PostgreSQL, Oracle DB | Website: direct.libertyinsurance.com.vn</p>
+                    <ul>
+                        <li>Insurance web platform for direct sales (Auto, Moto, Travel, Cancer Cash).</li>
+                        <li>Designed backend services in Python (FastAPI) for product management, quoting, payments.</li>
+                        <li>Integrated payment gateways and internal Liberty systems.</li>
+                        <li>Implemented middleware-level rate-limiting and led system testing/launch.</li>
+                    </ul>
+
+                    <p><strong>d) AI Flex Service (OCR Service – Internal) (Senior Developer)</strong></p>
+                    <p class="tech-stack">Role: Senior Developer | DB: AWS DynamoDB | IDE: IntelliJ (Java Spring)</p>
+                    <ul>
+                        <li>Developed OCR service to scan ID Cards and Driver Licenses (JSON extraction).</li>
+                        <li>Integrated with FPT vendor's OCR engine (file submission, result polling).</li>
+                        <li>Conducted performance tuning and stress testing for high-volume processing.</li>
+                    </ul>
+
+                    <p><strong>e) Crashbook API (Internal) (Senior Backend Developer)</strong></p>
+                    <p class="tech-stack">Role: Senior Backend Developer | DB: AuroraDB PostgreSQL</p>
+                    <ul>
+                        <li>Backend platform providing reference repair cost data for Claim staff.</li>
+                        <li>Built secure APIs using Java Spring Boot.</li>
+                        <li>Integrated with external garage repair cost systems and internal insurance databases.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- WOWCNS -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior Java Developer</div>
+                    <div class="company-name">WOWCNS - KOREA</div>
+                </div>
+                <div class="job-date">10/2020 – 8/2021</div>
+            </div>
+            <div class="job-details">
+                <p><strong>Project:</strong> Fullstack Development for MLM Web Platform</p>
+                <p class="tech-stack">Team Size: 6 | IDE: IntelliJ (Java Spring Boot), VS Code (React)</p>
+                <ul>
+                    <li>Developed a full-featured Multi-Level Marketing (MLM) web application.</li>
+                    <li>Designed backend APIs using Java Spring Boot (Microservices, security, audit logging).</li>
+                    <li>Built React-based frontend modules (Product browsing, commission tracking, dashboard).</li>
+                    <li>Integrated payment gateways and shipment tracking (Korea ↔ Vietnam).</li>
+                    <li>Developed customizable commission engine for multi-level bonus structures.</li>
+                    <li>Implemented multi-language support (Korean, Vietnamese, English).</li>
+                    <li>Optimized database queries (Oracle/Couchbase) for large-scale hierarchical data.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Amaris Consulting -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior Java Consultant</div>
+                    <div class="company-name">AMARIS CONSULTING – MANTU GROUP (Client: Prudential)</div>
+                </div>
+                <div class="job-date">10/2019 – 9/2020</div>
+            </div>
+            <div class="job-details">
+                <p>Working with outsource Projects in Prudential Client. Develop micro services with Java Spring, Oracle DB, Couchbase DB. Using Jenkins and Mobifirst to build and deploy products.</p>
+                <ul>
+                    <li><strong>Training Road Map Service (10/2019 – 03/2020):</strong> Build new functions of course management and learning process for agents. (DB: Oracle, Couchbase)</li>
+                    <li><strong>Magnum Pure – E-submission Service (04/2020 – 08/2020):</strong> Building insurance profile registration function and connecting data between Vietnam and Hong Kong. (DB: Oracle)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Smart Technologies -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">R&D Engineer</div>
+                    <div class="company-name">Smart Technologies Investment & Development JSC</div>
+                </div>
+                <div class="job-date">08/2015 – 09/2019</div>
+            </div>
+            <div class="job-details">
+                <ul>
+                    <li><strong>UAF & U2F Security Standard:</strong> Developed Rest API Service (Java Spring) and Mobile App (Android + iOS). Got full certificates from FIDO Alliance.</li>
+                    <li><strong>OCSP Functions (01/2016 – 05/2016):</strong> Developed OCSP feature functions for middleware-based PKI digital signature software.</li>
+                    <li><strong>U2F Server (06/2016 – 08/2016):</strong> Implemented authentication according to FIDO's U2F standard. (DB: PostgreSQL)</li>
+                    <li><strong>UAF Server Certification (09/2016 – 04/2017):</strong> Built UAF Server (Biometric security, AES encryption, ECDSA signing). Certified at SK Planet - Seoul.</li>
+                    <li><strong>UAF Client Certification (05/2017 – 07/2018):</strong> Built UAF Client (Android/iOS). Certified at Samsung R&D Campus - Seoul.</li>
+                    <li><strong>E-Invoice Integration for OCB Digital Banking (08/2018 – 09/2019):</strong> Built backend services to integrate e-invoice features into OCB's internet and mobile banking systems (Backbase platform). Ensured secure API access (OAuth2, JWT).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Education</h3>
+        <div class="education-item">
+            <div class="degree">Master Of Science: Environment & Resource Management</div>
+            <div class="school">Viet Nam National University – HCM University Of Science</div>
+            <div class="job-date">01/2017 – 06/2020</div>
+        </div>
+        <div class="education-item">
+            <div class="degree">Bachelor of Science: Environmental Informatics</div>
+            <div class="school">Viet Nam National University – HCM University Of Science</div>
+            <div class="job-date">09/2011 – 08/2015</div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Certifications & Achievements</h3>
+        <ul>
+            <li><a href="https://www.credly.com/badges/ed8a97c8-3adf-4eea-a295-fdca84c411a3" target="_blank" class="cert-link"><strong>AWS Certified Solutions Architect - Associate (SAA)</strong></a> – Credly Badge</li>
+            <li><a href="https://www.credly.com/badges/c4bee8d9-c3cd-4efb-a907-e6f9610805c2" target="_blank" class="cert-link"><strong>AWS Certified Solutions Architect - Professional (SAP)</strong></a> – AWS SAP - Credly</li>
+            <li><strong>iOS Developer Certificate</strong> – csc.edu.vn</li>
+            <li><strong>Cisco CCNA certified</strong> (Networking & Security)</li>
+            <li><strong>Certificate of Merit</strong> from Saigon Hi-tech Park (10/2018)</li>
+            <li><strong>FIDO Alliance Certifications:</strong> UAF Server (3/2017), UAF Client Android & iOS (5/2018)</li>
+        </ul>
+    </section>
 </div>
-
-<footer>
-    © 2025 Tran Nhu Phuong | Principal Backend Engineer
-</footer>
 
 </body>
 </html>
