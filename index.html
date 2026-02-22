@@ -4,134 +4,156 @@
     <title>Tran Nhu Phuong - Principal Backend Engineer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px;
-            line-height: 1.7;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f4f6f9;
+            color: #1f2937;
         }
-        h1 { color: #1f2937; }
-        h2 { margin-top: 50px; color: #111827; }
-        .section { margin-bottom: 40px; }
-        .tech { background: #f3f4f6; padding: 15px; border-radius: 8px; }
-        ul { padding-left: 20px; }
-        .highlight { font-weight: bold; }
+
+        .hero {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            margin-top: 60px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        }
+
+        .tech span {
+            display: inline-block;
+            background: #e5e7eb;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin: 6px;
+            font-size: 14px;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .certifications img {
+            height: 90px;
+            transition: transform 0.3s ease;
+        }
+
+        .certifications img:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
     </style>
 </head>
+
 <body>
 
-<h1>Tran Nhu Phuong</h1>
-<p><strong>Principal Backend Engineer | 10+ Years Experience</strong></p>
-<p>Email: nhuphuong.khtn@gmail.com | Phone: +84 36 7971 488</p>
-<p>LinkedIn: https://www.linkedin.com/in/phuong-nhu-9068bba8/</p>
-
-<div class="section">
-<h2>Professional Summary</h2>
-<p>
-Principal Backend Engineer with 10+ years of experience designing and building scalable,
-secure, and high-performance systems across banking, insurance, fintech, and enterprise domains.
-Strong expertise in Java Spring Boot, microservices architecture, cloud-native solutions (AWS),
-and security standards (FIDO, OAuth2, JWT).
-Experienced in technical leadership, architecture design, DevOps collaboration,
-and delivering end-to-end solutions in enterprise environments.
-</p>
+<!-- HERO -->
+<div class="hero">
+    <img src="Picture4.jpg" class="profile-img">
+    <h1>Tran Nhu Phuong</h1>
+    <p>Principal Backend Engineer | 10+ Years Experience</p>
+    <p>
+        <a href="mailto:nhuphuong.khtn@gmail.com">Email</a> |
+        <a href="https://www.linkedin.com/in/phuong-nhu-9068bba8/" target="_blank">LinkedIn</a>
+    </p>
 </div>
 
-<div class="section">
-<h2>Technical Stack</h2>
-<div class="tech">
-<b>Backend:</b> Java (8+), Spring Boot, Spring MVC, FastAPI, Microservices, REST API, Async Processing<br>
-<b>Security:</b> OAuth2, JWT, FIDO UAF/U2F, AES, ECDSA<br>
-<b>Databases:</b> Oracle, PostgreSQL, MySQL, Couchbase, DynamoDB<br>
-<b>Cloud & DevOps:</b> AWS (ECS, Lambda, S3, ALB, API Gateway, SNS, SQS), Docker, Kubernetes<br>
-<b>CI/CD:</b> Jenkins, GitHub Actions, GitLab CI<br>
-<b>Messaging:</b> RabbitMQ, Kafka<br>
-<b>Frontend Experience:</b> ReactJS, React Native (project-based)
-</div>
-</div>
+<div class="container">
 
-<div class="section">
-<h2>Work Experience</h2>
+    <h2>Professional Summary</h2>
+    <div class="card">
+        Principal Backend Engineer specializing in Java Spring Boot,
+        Microservices Architecture, AWS Cloud, and Enterprise Security standards.
+        Delivered banking and insurance platforms with scalability,
+        compliance, and high performance.
+    </div>
 
-<h3>FPT Software (04/2025 – Present)</h3>
-<p><b>Developer Level 3 – Banking Domain (ADIB & MYZOI)</b></p>
-<ul>
-<li>Develop digital banking backend services using Java Spring Boot.</li>
-<li>Build REST APIs for onboarding, eKYC, account management, transactions.</li>
-<li>Integrate core banking, AML/KYC, and payment systems.</li>
-<li>Design event-driven architecture and optimize async processing flows.</li>
-</ul>
+    <h2>Technical Stack</h2>
+    <div class="card tech">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Microservices</span>
+        <span>REST API</span>
+        <span>Oracle</span>
+        <span>PostgreSQL</span>
+        <span>DynamoDB</span>
+        <span>AWS</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>Kafka</span>
+        <span>RabbitMQ</span>
+    </div>
 
-<h3>Liberty Mutual Insurance Vietnam (09/2021 – 04/2025)</h3>
-<p><b>Principal Engineer – Backend & Architecture</b></p>
-<ul>
-<li>Designed AWS-based architecture solutions for enterprise systems.</li>
-<li>Led backend teams and managed CI/CD, code conventions, and DevOps collaboration.</li>
-<li>Delivered secure, scalable systems aligned with compliance standards.</li>
-<li>Led key platforms: Digital Direct Portal, Zalo Mini App, SecureLink.</li>
-</ul>
+    <!-- Architecture Image -->
+    <h2>Architecture & System Design</h2>
+    <div class="card image-section">
+        <p>Enterprise Architecture Roadmap & System Design</p>
+        <img src="Picture1.png">
+    </div>
 
-<h3>WOWCNS Korea (09/2020 – 08/2021)</h3>
-<p><b>Senior Consultant | Fullstack Developer</b></p>
-<ul>
-<li>Built MLM web platform using Java Spring Boot & React.</li>
-<li>Designed commission engine and multi-language support.</li>
-<li>Integrated payment gateways and shipment APIs.</li>
-</ul>
+    <!-- Presentation Image -->
+    <div class="card image-section">
+        <p>Architecture Presentation & Technical Leadership</p>
+        <img src="Picture2.png">
+    </div>
 
-<h3>Amaris Consulting – Prudential Client (2019 – 2020)</h3>
-<p><b>Senior Java Consultant</b></p>
-<ul>
-<li>Developed training roadmap and insurance e-submission services.</li>
-<li>Worked with Oracle & Couchbase databases.</li>
-</ul>
-
-<h3>Smart Technologies Investment & Development JSC (2015 – 2019)</h3>
-<p><b>R&D Engineer</b></p>
-<ul>
-<li>Developed UAF & U2F servers compliant with FIDO Alliance standards.</li>
-<li>Obtained UAF Server & Client certification (Korea).</li>
-<li>Built e-Invoice integration for OCB Digital Banking (Backbase platform).</li>
-</ul>
+    <!-- AWS Certification -->
+    <h2>Certifications</h2>
+    <div class="card certifications">
+        <a href="https://www.credly.com/badges/ed8a97c8-3adf-4eea-a295-fdca84c411a3" target="_blank">
+            <img src="Picture3.png">
+        </a>
+        <p>AWS Certified Solutions Architect – Associate & Professional</p>
+    </div>
 
 </div>
 
-<div class="section">
-<h2>Highlighted Projects</h2>
-<ul>
-<li><span class="highlight">ADIB Digital Onboarding Platform</span> – eKYC, biometric verification, secure REST APIs.</li>
-<li><span class="highlight">Vietnam Digital Direct Portal</span> – Insurance web platform with secure payment integration.</li>
-<li><span class="highlight">Zalo Mini App (Liberty)</span> – Sales management & commission system with microservices backend.</li>
-<li><span class="highlight">FIDO UAF/U2F Certification Projects</span> – Security authentication server & client implementation.</li>
-<li><span class="highlight">OCB E-Invoice Integration</span> – Microservices integrated with Backbase digital banking.</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Certifications</h2>
-<ul>
-<li>AWS Certified Solutions Architect – Associate (SAA)</li>
-<li>AWS Certified Solutions Architect – Professional (SAP)</li>
-<li>Cisco CCNA</li>
-<li>iOS Developer Certificate</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Education</h2>
-<p><b>Master of Science – Environment & Resource Management</b><br>
-Viet Nam National University – HCM University of Science (2020)</p>
-
-<p><b>Bachelor of Science – Environmental Informatics</b><br>
-Viet Nam National University – HCM University of Science (2015)</p>
-</div>
-
-<div class="section">
-<h2>Languages</h2>
-<p>Fluent English – technical discussions, documentation, presentations</p>
-</div>
+<footer>
+    © 2025 Tran Nhu Phuong | Principal Backend Engineer
+</footer>
 
 </body>
 </html>
